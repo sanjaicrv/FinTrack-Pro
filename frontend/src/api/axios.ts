@@ -1,7 +1,10 @@
 import axios, { AxiosError, InternalAxiosRequestConfig } from 'axios'
 import toast from 'react-hot-toast'
 
-const BASE_URL = '/api/v1'
+export const BACKEND_URL = (import.meta.env.VITE_API_BASE_URL || 'https://appropriations-mice-poet-ink.trycloudflare.com').replace(/\/+$/, '')
+export const GOOGLE_AUTH_URL = `${BACKEND_URL}/api/oauth2/authorization/google`
+
+const BASE_URL = `${BACKEND_URL}/api/v1`
 
 const api = axios.create({
   baseURL: BASE_URL,

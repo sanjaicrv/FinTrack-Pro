@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { useAuth } from '../context/AuthContext'
 import type { RegisterRequest } from '../types'
+import { GOOGLE_AUTH_URL } from '../api/axios'
 import {
   Eye, EyeOff, Mail, Lock, User, ArrowRight,
   BarChart3, Shield, Check, CheckCircle, XCircle, Zap, TrendingUp, Sparkles, ShieldCheck,
@@ -62,7 +63,7 @@ export default function RegisterPage() {
   const [loading, setLoading]      = useState(false)
 
   const handleGoogleLogin = () => {
-    window.location.href = '/api/oauth2/authorization/google'
+    window.location.href = GOOGLE_AUTH_URL
   }
 
   const {

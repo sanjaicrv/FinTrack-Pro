@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { useAuth } from '../context/AuthContext'
 import type { LoginRequest } from '../types'
+import { GOOGLE_AUTH_URL } from '../api/axios'
 import {
   Eye, EyeOff, Mail, Lock, ArrowRight,
   BarChart3, Shield, TrendingUp, Target, CheckCircle,
@@ -34,7 +35,7 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false)
 
   const handleGoogleLogin = () => {
-    window.location.href = '/api/oauth2/authorization/google'
+    window.location.href = GOOGLE_AUTH_URL
   }
 
   const {
