@@ -111,7 +111,7 @@ export default function SettingsPage() {
           </div>
         </div>
 
-        <form onSubmit={profileForm.handleSubmit(handleProfile)} className="space-y-4">
+        <form onSubmit={profileForm.handleSubmit(handleProfile)} noValidate className="space-y-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="label">First Name</label>
@@ -205,7 +205,7 @@ export default function SettingsPage() {
           </div>
         </div>
 
-        <form onSubmit={pwForm.handleSubmit(handlePassword)} className="space-y-4">
+        <form onSubmit={pwForm.handleSubmit(handlePassword)} noValidate className="space-y-4">
           <div>
             <label className="label">Current Password</label>
             <input

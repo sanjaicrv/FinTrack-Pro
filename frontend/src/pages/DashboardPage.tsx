@@ -604,7 +604,7 @@ export default function DashboardPage() {
               <input
                 type="number"
                 min="0"
-                step="500"
+                step="any"
                 value={budgetInput}
                 onChange={(e) => setBudgetInput(e.target.value)}
                 placeholder="e.g. 25000"
@@ -661,8 +661,8 @@ export default function DashboardPage() {
               <span className="absolute left-3.5 top-2.5 text-xs text-slate-400 font-bold">₹</span>
               <input
                 type="number"
-                min="100"
-                step="500"
+                min="1"
+                step="any"
                 value={catAmount}
                 onChange={(e) => setCatAmount(e.target.value)}
                 placeholder="e.g. 8000"

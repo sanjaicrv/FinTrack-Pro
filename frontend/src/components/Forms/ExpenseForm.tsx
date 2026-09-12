@@ -51,7 +51,7 @@ export default function ExpenseForm({ onSubmit, initial, loading }: Props) {
   const busy = loading || isSubmitting
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+    <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-4">
       {/* Category Selection */}
       <div>
         <label className="label">Category *</label>

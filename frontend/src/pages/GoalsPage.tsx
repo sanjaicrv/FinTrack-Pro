@@ -197,7 +197,7 @@ export default function GoalsPage() {
         subtitle={`Current balance: ${fmt.currency(contributing?.currentAmount ?? 0)} of ${fmt.currency(contributing?.targetAmount ?? 0)}`}
         size="sm"
       >
-        <form onSubmit={handleSubmit(handleContribute)} className="space-y-4">
+        <form onSubmit={handleSubmit(handleContribute)} noValidate className="space-y-4">
           <div>
             <label className="label">Contribution Amount (₹)</label>
             <div className="relative">
@@ -205,9 +205,10 @@ export default function GoalsPage() {
               <input
                 type="number"
                 min="1"
-                step="100"
+                step="any"
                 {...register('amount', {
                   required: 'Amount is required',
+                  valueAsNumber: true,
                   min: { value: 1, message: 'Must be greater than 0' }
                 })}
                 placeholder="e.g. 5000"

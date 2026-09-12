@@ -34,7 +34,7 @@ export default function GoalForm({ onSubmit, initial, loading }: Props) {
   const busy = loading || isSubmitting
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+    <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-4">
       {/* Goal Title */}
       <div>
         <label className="label">Savings Target Name *</label>
