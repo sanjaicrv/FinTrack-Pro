@@ -23,8 +23,15 @@ import AnalyticsPage from './pages/AnalyticsPage'
 import SettingsPage  from './pages/SettingsPage'
 
 export default function App() {
+  const { isAuthenticated, isLoading } = useAuth()
 
-  const { isAuthenticated } = useAuth()
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-[#050510]">
+        <div className="w-8 h-8 border-4 border-violet-500 border-t-transparent rounded-full animate-spin" />
+      </div>
+    )
+  }
 
   return (
     <ThemeProvider>

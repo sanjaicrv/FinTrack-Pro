@@ -64,6 +64,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
             localStorage.setItem('user', JSON.stringify(u))
             setUser(u)
             toast.success(`Welcome back, ${u.firstName}!`)
+            if (window.location.pathname !== '/dashboard') {
+              window.location.replace('/dashboard')
+            }
           }
           setIsLoading(false)
         })
